@@ -1,14 +1,20 @@
-# PRUEBA1
+# GranFormato
 
-Website inicial estatica para PRUEBA1.
+Prototype frontend for a premium large-format art and interior design website.
 
-## Archivos
+## What is included
 
-- `index.html`: contenido principal de la pagina.
-- `styles.css`: estilos visuales y responsive.
-- `script.js`: pequeno script para actualizar el ano del footer.
-- `assets/hero-pattern.svg`: fondo visual del hero.
+- Home page with editorial hero and curated artwork gallery.
+- Filterable artwork grid with 12 placeholder artworks and 4 artists.
+- Artwork detail view with artist bio, sizes, materials, technical information, suggested spaces, and related works.
+- AI room visualization modal with upload flow and mock preview logic prepared for a future image generation API.
+- Consultative contact and quote form.
+- Responsive styling with a premium editorial visual direction.
 
-## Ver la web
+## How to view
 
-Abre `index.html` en el navegador.
+Open `index.html` in a browser. No build step is required.
+
+## Notes
+
+This version is intentionally frontend-only. The visualization and quote form are ready to connect later to real APIs or a backend service.

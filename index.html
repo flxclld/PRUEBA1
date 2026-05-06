@@ -3,86 +3,82 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PRUEBA1</title>
+    <title>GranFormato | Arte en gran formato para transformar espacios</title>
     <meta
       name="description"
-      content="Website inicial de PRUEBA1, lista para personalizar y publicar."
+      content="Arte en gran formato, visualizacion AI, asesoria curatorial e instalacion profesional para hogares, hoteles, restaurantes y espacios arquitectonicos."
     >
+    <link rel="preload" href="assets/granformato-hero.png" as="image">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="PRUEBA1 inicio">PRUEBA1</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="GranFormato inicio">
+        <span>Gran</span>Formato
+      </a>
       <nav class="nav" aria-label="Navegacion principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#proyecto">Proyecto</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#gallery">Obras</a>
+        <a href="#services">Servicios</a>
+        <a href="#studio">Estudio</a>
+        <a href="#contact">Cotizar</a>
       </nav>
+      <button class="icon-button" type="button" data-open-visualizer aria-label="Abrir visualizador AI">
+        AI
+      </button>
     </header>
 
-    <main id="inicio">
-      <section class="hero">
-        <div class="hero__content">
-          <p class="eyebrow">Nueva website</p>
-          <h1>Una presencia digital clara para empezar fuerte.</h1>
-          <p class="hero__copy">
-            PRUEBA1 es una base moderna, rapida y adaptable para presentar una
-            marca, servicio o proyecto con confianza desde el primer dia.
-          </p>
-          <div class="hero__actions" aria-label="Acciones principales">
-            <a class="button button--primary" href="#contacto">Contactar</a>
-            <a class="button button--secondary" href="#proyecto">Ver detalles</a>
+    <main id="app"></main>
+
+    <div class="modal" data-visualizer-modal aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
+      <section class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="visualizer-title">
+        <div class="modal__header">
+          <div>
+            <p class="eyebrow">Visualizacion AI</p>
+            <h2 id="visualizer-title">Ver la obra en tu propio espacio.</h2>
           </div>
+          <button class="icon-button" type="button" data-close-modal aria-label="Cerrar visualizador">x</button>
+        </div>
+        <form class="visualizer" data-visualizer-form>
+          <label class="upload-zone">
+            <input type="file" accept="image/*" data-room-upload>
+            <span>Sube una foto de tu sala, lobby o restaurante</span>
+            <small>JPG o PNG. En este prototipo se genera una vista simulada.</small>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Obra
+              <select data-visualizer-artwork></select>
+            </label>
+            <label>
+              Tamano aproximado
+              <select data-visualizer-size></select>
+            </label>
+            <label>
+              Posicion en muro
+              <select data-visualizer-position>
+                <option value="center">Centro del muro</option>
+                <option value="left">Lado izquierdo</option>
+                <option value="right">Lado derecho</option>
+                <option value="low">Sobre mobiliario bajo</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="button button--dark" type="submit">Generar visualizacion</button>
+        </form>
+
+        <div class="mockup" data-visualizer-preview>
+          <div class="mockup__room">
+            <div class="mockup__art" data-preview-art></div>
+            <div class="mockup__sofa"></div>
+          </div>
+          <p>Preview conceptual listo para conectar con una API de generacion de imagen.</p>
         </div>
       </section>
+    </div>
 
-      <section class="section" id="servicios">
-        <div class="section__heading">
-          <p class="eyebrow">Servicios</p>
-          <h2>Todo listo para convertir una idea en una web real.</h2>
-        </div>
-        <div class="features">
-          <article class="feature">
-            <h3>Diseno adaptable</h3>
-            <p>La pagina se ve bien en movil, tablet y escritorio.</p>
-          </article>
-          <article class="feature">
-            <h3>Contenido editable</h3>
-            <p>Textos, secciones y llamadas a la accion faciles de ajustar.</p>
-          </article>
-          <article class="feature">
-            <h3>Base ligera</h3>
-            <p>Sin dependencias pesadas, pensada para cargar rapido.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--split" id="proyecto">
-        <div>
-          <p class="eyebrow">Proyecto</p>
-          <h2>Una estructura limpia para crecer.</h2>
-        </div>
-        <p>
-          Esta version inicial puede transformarse en una web para hotel,
-          restaurante, portfolio, tienda, negocio local o servicio profesional.
-          Solo falta incorporar la identidad visual, textos definitivos y fotos.
-        </p>
-      </section>
-
-      <section class="contact" id="contacto">
-        <div>
-          <p class="eyebrow">Contacto</p>
-          <h2>Hablemos de PRUEBA1.</h2>
-          <p>Agrega aqui tu correo, telefono, WhatsApp o formulario.</p>
-        </div>
-        <a class="button button--primary" href="mailto:hola@example.com">hola@example.com</a>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> PRUEBA1. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script type="module" src="src/app.js"></script>
   </body>
 </html>
