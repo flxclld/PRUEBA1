@@ -1,20 +1,44 @@
 # GranFormato
 
-Prototype frontend for a premium large-format art and interior design website.
+Premium large-format art website built with Next.js and prepared for Sanity CMS.
 
-## What is included
+## Run locally
 
-- Home page with editorial hero and curated artwork gallery.
-- Filterable artwork grid with 12 placeholder artworks and 4 artists.
-- Artwork detail view with artist bio, sizes, materials, technical information, suggested spaces, and related works.
-- AI room visualization modal with upload flow and mock preview logic prepared for a future image generation API.
-- Consultative contact and quote form.
-- Responsive styling with a premium editorial visual direction.
+```bash
+npm run dev
+```
 
-## How to view
+Open `http://localhost:3000`.
 
-Open `index.html` in a browser. No build step is required.
+## Sanity setup
 
-## Notes
+1. Create a Sanity project at `https://www.sanity.io/manage`.
+2. Copy `.env.example` to `.env.local`.
+3. Fill:
 
-This version is intentionally frontend-only. The visualization and quote form are ready to connect later to real APIs or a backend service.
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2026-05-06
+```
+
+4. Start the website:
+
+```bash
+npm run dev
+```
+
+5. Open the Studio:
+
+```text
+http://localhost:3000/studio
+```
+
+Until those variables are configured, the site uses local fallback artwork data so the frontend still works.
+
+## Content models
+
+- Artist
+- Artwork
+- Quote request
+- Site settings
