@@ -117,7 +117,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: url("/images/granformato-hero.png") center / cover no-repeat;
+  background: url("/images/granformato-hero.svg") center / cover no-repeat;
   transform: scale(1.02);
 }
 
